@@ -4,19 +4,17 @@ using UnityEngine;
 
 public class LiftController : MonoBehaviour
 {
-    public Animator Animator;
-    // Start is called before the first frame update
+    private Animator animator;
     private void Start()
     {
-        Animator = GetComponent<Animator>();
+        animator = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
     private void Update()
     {
         if (Input.GetKey(KeyCode.E))
         {
-            Animator.SetBool("IsSwitchOn", true);
+            animator.SetBool("IsSwitchOn", true);
         }
     }
 }

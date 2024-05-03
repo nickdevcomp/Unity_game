@@ -22,14 +22,13 @@ public class CameraController : MonoBehaviour
     [SerializeField] 
     private float upperLimit;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         offset = new Vector2(Math.Abs(offset.x), offset.y);
         FindPlayer(isLeft);
     }
 
-    public void FindPlayer(bool playerIsLeft)
+    private void FindPlayer(bool playerIsLeft)
     {
         player = GameObject.FindGameObjectsWithTag("Player").First().transform;
         lastX = Mathf.RoundToInt(player.position.x);
@@ -45,8 +44,7 @@ public class CameraController : MonoBehaviour
         } 
     }
     
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
         if (player)
         {
